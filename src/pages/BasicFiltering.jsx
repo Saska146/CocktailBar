@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import CocktailList from "./CoctailList";
-import SearchBar from "./SearchBar";
+import CocktailList from "../components/CocktailList";
+import SearchBar from "../components/SearchBar";
 import { useSearchParams } from "react-router-dom";
 import { Grid } from "@mui/material";
+import '../style.css'
 
 
-export default function CoctailsPage(){
+export default function BasicFiltering(){
     const [cocktails, setCocktails] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [searchParams, setSearchParams] = useSearchParams();
@@ -18,6 +19,7 @@ export default function CoctailsPage(){
         
         let filter = category || glass || alcohol;
         let searchParam = category ? 'c' : glass ? 'g' : alcohol ? 'a' : ''
+        console.log(filter);
 
         const fetchCocktails = async () => {
           try {
@@ -46,7 +48,7 @@ export default function CoctailsPage(){
       return(
         <div style={{display: 'flex'}}>
      
-        <div style={{color: 'white', marginLeft: '10px', marginRight: '0px', width: '210px'}} >
+        <div className="basicFiltering" >
             <p>Category</p>
             <button onClick={() => getByFilter('c=Ordinary_Drink')}>Ordinary drink</button>
             <button onClick={() => getByFilter('c=Cocktail')}>Cocktail</button>

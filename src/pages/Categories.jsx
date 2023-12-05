@@ -20,27 +20,24 @@ export default function Categories() {
   }, []);
 
   return (
-    <div>
-      <h1 style={{color: "white"}}>Categories</h1>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell style={{fontWeight: 'bold'}}>ID</TableCell>
-              <TableCell style={{fontWeight: 'bold'}}>Name</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {categories.map((category, index) => (
-              <TableRow key={index}>
-                <TableCell>{index + 1}</TableCell>
-                <TableCell>{category.strCategory}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
+    <TableContainer component={Paper}>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell style={{fontWeight: 'bold'}}>ID</TableCell>
+          <TableCell style={{fontWeight: 'bold'}}>Name</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {categories.map((category, index) => (
+          <TableRow key={index}>
+            <TableCell>{index + 1}</TableCell>
+            { <TableCell>{category.strCategory}</TableCell> }
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </TableContainer>
   );
 };
 

@@ -1,11 +1,11 @@
-import Home  from './components/Home.jsx';
+import Home  from './pages/Home.jsx';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import CocktailDetail from './components/CoctailDetail.jsx';
-import Categories from './components/Categories.jsx';
-import AvailableGlasses from './components/AvailableGlasses.jsx';
-import Ingredients from './components/Ingredients.jsx';
-import BasicFiltering from './components/BasicFiltering.jsx';
+import CocktailDetail from './pages/CocktailDetail.jsx';
+import Categories from './pages/Categories.jsx';
+import AvailableGlasses from './pages/AvailableGlasses.jsx';
+import Ingredients from './pages/Ingredients.jsx';
+import BasicFiltering from './pages/BasicFiltering.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 

@@ -1,4 +1,4 @@
-import FavoriteCoctails from "./FavoriteCocktails.jsx";
+import FavoriteCoctails from "../components/FavoriteCocktails.jsx";
 
 export default function Home(){
     return(
