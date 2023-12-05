@@ -1,0 +1,54 @@
+/* .container {
+    background-color: #491D38; 
+    width: 100%;
+    min-height: '100vh';
+    padding-top: '64px';
+    position: 'fixed',
+
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }  
+  
+  .header {
+    background-color: #3B152C;
+    color: white;
+    position: static;
+  }
+  
+  .footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #3B152C;
+    text-align: center; 
+    color: white;
+  }
+  
+  .favoriteCocktails {
+    padding: 1rem;
+    min-Height: 100vh;
+    text-align: center; 
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .basicFiltering {
+    color: white;
+    margin-left: 10px;
+    margin-right: 0px;
+    width: 210px;
+  }
+
+  .cocktailDetails {
+    color: white;
+    margin-left: 30px;
+  }
+
+  
+  
+
+
