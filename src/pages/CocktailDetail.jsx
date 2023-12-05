@@ -47,22 +47,15 @@ export default function CocktailDetail() {
 
   return (
     <div className='cocktailDetails'>
+    <div style={{display: 'flex'}}> 
+  <div>
       <h2>{cocktailDetails.strDrink}</h2>
-      <p>{cocktailDetails.strAlcoholic}</p>
-      <p>Category: {cocktailDetails.strCategory}</p>
-      <p>Instructions: {cocktailDetails[selectedLanguage]}</p>
-      <label htmlFor="languageSelect">Language: </label>
-      <select id="languageSelect" onChange={handleLanguageChange} value={selectedLanguage}>
-        <option value="strInstructions">English</option>
-        <option value="strInstructionsES">Spanish</option>
-        <option value="strInstructionsDE">German</option>
-        <option value="strInstructionsFR">French</option>
-        <option value="strInstructionsIT">Italian</option>
-      </select>
-      <p>Glass: {cocktailDetails.strGlass}</p>
-      <img src={cocktailDetails.strDrinkThumb} alt={cocktailDetails.strDrink} height={150} />
+      <img src={cocktailDetails.strDrinkThumb} alt={cocktailDetails.strDrink} height={300} />
+      <p>{cocktailDetails.strCategory}; {cocktailDetails.strAlcoholic}</p>
       <p><button onClick={() => handleAddToFavorites(cocktailDetails.idDrink)}>Add to favorites</button></p>
-      <p>Ingredients:</p>
+      </div>
+      <div className='ingredientsInstructionsContainer'>
+      <h3>Ingredients:</h3>
       <ul>
       {Array.from({ length: 15 }, (_, index) => {
         const ingredient = cocktailDetails[`strIngredient${index + 1}`];
@@ -78,18 +71,34 @@ export default function CocktailDetail() {
         }
       })}
     </ul>
-    {cocktailDetails && (
-      <div className="youtubeContainer">
+    <h3>Instructions</h3>
+      <p>{cocktailDetails[selectedLanguage]}</p>
+      <label htmlFor="languageSelect">Language: </label>
+      <select id="languageSelect" onChange={handleLanguageChange} value={selectedLanguage}>
+        <option value="strInstructions">English</option>
+        <option value="strInstructionsES">Spanish</option>
+        <option value="strInstructionsDE">German</option>
+        <option value="strInstructionsFR">French</option>
+        <option value="strInstructionsIT">Italian</option>
+      </select>
+      <h3>Glass</h3>
+      <p>{cocktailDetails.strGlass}</p>
+      </div>
+      </div>
+      <div className='videoContainer'>
+      {cocktailDetails && (
+      <div className='videoInstructions'>
         <p>Video Instructions:</p>
         <iframe
           title="YouTube Video"
-          width="560"
-          height="315"
+          width = '600'
+          height = '300'
           src="https://www.youtube.com/embed/b0IuTL3Z-kk?si=VBKre9MNpJ824PgT"
           allowFullScreen
         ></iframe>
       </div>
     )}
+      </div>
     </div>
   );
 };
